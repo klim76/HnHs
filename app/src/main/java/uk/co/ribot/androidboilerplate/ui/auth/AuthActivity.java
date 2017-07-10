@@ -17,7 +17,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.ribot.androidboilerplate.R;
 import uk.co.ribot.androidboilerplate.ui.base.BaseActivity;
+import uk.co.ribot.androidboilerplate.util.AndroidComponentUtil;
 import uk.co.ribot.androidboilerplate.util.DialogFactory;
+import uk.co.ribot.androidboilerplate.util.ViewUtil;
 
 public class AuthActivity extends BaseActivity implements AuthMvpView, View.OnClickListener, View.OnTouchListener {
 
@@ -82,6 +84,7 @@ public class AuthActivity extends BaseActivity implements AuthMvpView, View.OnCl
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.sign_in_enter:
+                ViewUtil.hideKeyboard(this);
                 mAuthPresenter.tryEnter(etMail.getText().toString(), etPassword.getText().toString());
                 break;
         }

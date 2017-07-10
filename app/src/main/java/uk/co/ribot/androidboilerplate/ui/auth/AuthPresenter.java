@@ -11,6 +11,8 @@ import rx.schedulers.Schedulers;
 import timber.log.Timber;
 import uk.co.ribot.androidboilerplate.data.DataManager;
 import uk.co.ribot.androidboilerplate.data.model.Ribot;
+import uk.co.ribot.androidboilerplate.data.model.WeatherReport;
+import uk.co.ribot.androidboilerplate.data.remote.WeatherService;
 import uk.co.ribot.androidboilerplate.injection.ConfigPersistent;
 import uk.co.ribot.androidboilerplate.ui.base.BasePresenter;
 import uk.co.ribot.androidboilerplate.ui.main.MainMvpView;
@@ -44,29 +46,27 @@ public class AuthPresenter extends BasePresenter<AuthMvpView> {
     public void logIn() {
         checkViewAttached();
         RxUtil.unsubscribe(mSubscription);
-       /* mSubscription = mDataManager.getRibots()
+        mSubscription = mDataManager.getWether(WeatherService.SARANSK_ID,
+                WeatherService.METRIC_SYSTEM, WeatherService.MY_APPLICATION_KEY)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe(new Subscriber<List<Ribot>>() {
+                .subscribe(new Subscriber<WeatherReport>() {
                     @Override
                     public void onCompleted() {
+
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         Timber.e(e, "There was an error loading the ribots.");
-                        getMvpView().showError();
+                        getMvpView().showError(e.getMessage());
                     }
 
                     @Override
-                    public void onNext(List<Ribot> ribots) {
-                        if (ribots.isEmpty()) {
-                            getMvpView().showRibotsEmpty();
-                        } else {
-                            getMvpView().showRibots(ribots);
-                        }
+                    public void onNext(WeatherReport weatherReport) {
+                        getMvpView().onSuccess(weatherReport.getWeatherReport());
                     }
-                });*/
+                });
     }
 
     public void tryEnter(String mail, String password){
