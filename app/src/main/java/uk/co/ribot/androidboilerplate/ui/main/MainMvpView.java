@@ -1,5 +1,7 @@
 package uk.co.ribot.androidboilerplate.ui.main;
 
+import android.content.Context;
+
 import java.util.List;
 
 import uk.co.ribot.androidboilerplate.data.model.Ribot;

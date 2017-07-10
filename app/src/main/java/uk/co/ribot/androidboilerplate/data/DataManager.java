@@ -45,4 +45,5 @@ public class DataManager {
         return mDatabaseHelper.getRibots().distinct();
     }
 
+    //public Observable<>
 }

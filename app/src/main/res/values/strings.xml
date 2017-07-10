@@ -9,4 +9,12 @@
 
     <string name="empty_ribots">There aren\'t any ribots</string>
     <string name="error_loading_ribots">There was a problem loading the ribots</string>
+
+    <string name="activity_auth_title">Авторизация</string>
+    <string name="activity_auth_email">Электронная почта</string>
+    <string name="activity_auth_password">Пароль</string>
+    <string name="activity_auth_enter">Войти</string>
+    <string name="activity_main_go_auth">Перейти к авторизации</string>
+
+    <string name="password_help">Пароль - минимум 6 символов, должен обязательно содержать минимум 1 строчную букву, 1 заглавную, и 1 цифру.</string>
 </resources>

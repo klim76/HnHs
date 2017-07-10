@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="32dp">
 
+    <!--
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
@@ -14,5 +15,14 @@
         android:paddingBottom="6dp"
         android:paddingTop="6dp"
         android:scrollbars="vertical" />
+    -->
+    <Button
+        android:id="@+id/go_to_auth"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/button_shadow"
+        android:text="@string/activity_main_go_auth"
+        android:textColor="@color/accent"
+        android:textSize="16dp"/>
 
 </RelativeLayout>

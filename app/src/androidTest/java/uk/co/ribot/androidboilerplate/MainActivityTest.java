@@ -59,8 +59,8 @@ public class MainActivityTest {
 
         int position = 0;
         for (Ribot ribot : testDataRibots) {
-            onView(withId(R.id.recycler_view))
-                    .perform(RecyclerViewActions.scrollToPosition(position));
+            /*onView(withId(R.id.recycler_view))
+                    .perform(RecyclerViewActions.scrollToPosition(position));*/
             String name = String.format("%s %s", ribot.profile().name().first(),
                     ribot.profile().name().last());
             onView(withText(name))

@@ -4,4 +4,8 @@
     <color name="primary_dark">#000000</color>
     <color name="accent">#FFFFFF</color>
     <color name="gray">#ffdfdfdf</color>
+    <color name="button">#ff9b00</color>
+    <color name="button_shadow1">#3d000000</color>
+    <color name="button_shadow2">#1e000000</color>
+    <color name="edit_text_description">#4e92df</color>
 </resources>
